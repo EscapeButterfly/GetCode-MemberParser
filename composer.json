@@ -1,0 +1,27 @@
+{
+    "name": "get_code/member_parser",
+    "description": "Package for queued parsing members from file and store them to database.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitalii Horovoi",
+            "email": "vitalii.gorovoii@gmail.com"
+        }
+    ],
+    "minimum-stability" : "dev",
+    "prefer-stable" : true,
+    "require": {},
+    "autoload" : {
+        "psr-4": {
+            "GetCode\\MemberParser\\" : "src/"
+        }
+    },
+    "extra" : {
+        "laravel" : {
+            "providers" : [
+                "GetCode\\MemberParser\\MemberParserServiceProvider"
+            ]
+        }
+    }
+}
