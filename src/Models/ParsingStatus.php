@@ -3,7 +3,15 @@
 namespace GetCode\MemberParser\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ParsingStatus extends Model {
-    //TODO
+    use SoftDeletes;
+
+    protected $fillable = [
+        'total_members',
+        'processed',
+        'status',
+        'msg'
+    ];
 }

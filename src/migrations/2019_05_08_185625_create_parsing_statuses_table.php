@@ -13,8 +13,12 @@ class CreateParsingStatusesTable extends Migration {
     public function up() {
         Schema::create('parsing_statuses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('total_members');
+            $table->integer('processed')->default(0);
+            $table->enum('status', ['in_queue', 'processing', 'completed', 'error'])->default('in_queue');
+            $table->string('msg')->nullable();
             $table->timestamps();
-            //TODO
+            $table->softDeletes();
         });
     }
 
